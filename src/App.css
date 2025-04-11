@@ -1,0 +1,20 @@
+* {
+  font-family: "Rubik", sans-serif;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: black;
+  display: flex;
+  justify-content: center;
+  padding: 0;
+}
+
+#root {
+  background-color: #f7f8f9;
+  height: 812px;
+  width: 375px;
+  border-radius: 16px;
+  overflow: hidden;
+}
+
