@@ -12,19 +12,17 @@ import { Link } from "react-router-dom";
 
 export default function Login() {
   return (
-    <div className="h-[812px] relative flex flex-col">
+    <div className="h-[812px] relative flex flex-col bg-[#F7F8F9] border mt-4 ">
       <header>
         <NavigationMenu>
-          <NavigationMenuList className="px-[20px] pt-[40px] pb-[24px]">
+          <NavigationMenuList className="px-[20px] pt-[40px] ">
             <NavigationMenuItem>
-              <div className="flex flex-col gap-[14px]">
-                <h1 className="text-[28px] font-semibold leading-none">
-                  Signin to your
+              <div className="flex flex-col">
+                <h1 className="text-[28px] font-semibold max-w-[198px] leading-normal">
+                  Signin to your PopX account
                 </h1>
-                <h1 className="text-[28px] font-semibold leading-none">
-                  PopX account
-                </h1>
-                <h1 className="text-base text-[#1D2226] opacity-60">
+              
+                <h1 className="text-base text-[#1D2226] opacity-60 mt-[14px]">
                   Lorem ipsum dolor sit amet, <br /> consectetur adipiscing
                   elit,
                 </h1>
@@ -34,7 +32,7 @@ export default function Login() {
         </NavigationMenu>
       </header>
 
-      <div className="space-y-6 px-[20px]">
+      <div className=" px-[20px]">
         <div className="relative">
           <Label
             htmlFor="fullName"
@@ -45,7 +43,7 @@ export default function Login() {
           <Input
             id="fullName"
             type="text"
-            className="mt-[22px] bg-[#f7f8f9] text-black border border-[#CBCBCB] focus-visible:ring-[#6C25FF] h-[52px] px-3"
+            className="mt-[22px] bg-[#f7f8f9] text-black border border-[#CBCBCB] focus-visible:ring-[#6C25FF] h-[40px] px-3"
             placeholder="Enter email address"
           />
         </div>
@@ -60,7 +58,7 @@ export default function Login() {
           <Input
             id="email"
             type="email"
-            className="mt-[22px] bg-[#f7f8f9] text-black border border-[#CBCBCB] focus-visible:ring-[#6C25FF] h-[52px] px-3"
+            className="mt-[22px] bg-[#f7f8f9] text-black border border-[#CBCBCB] focus-visible:ring-[#6C25FF] h-[40px] px-3"
             placeholder="Enter Password"
           />
         </div>
@@ -71,7 +69,7 @@ export default function Login() {
         <Link to="/settings">
           <Button
             type="submit"
-            className="w-full bg-[#cbcbcb] hover:bg-[#919191] text-white font-semibold text-[16px] h-[46px] mt-0 mb-[30px]"
+            className="w-full bg-[#cbcbcb] hover:bg-[#919191] text-white font-medium text-[16px] h-[46px] mt-0 mb-[30px]"
           >
             Login
           </Button>

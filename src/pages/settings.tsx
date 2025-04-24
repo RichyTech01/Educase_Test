@@ -9,20 +9,20 @@ import { Card } from "@/components/ui/card";
 export default function Settings() {
   return (
     <>
-      <div className="h-[812px]">
-        <header className="bg-white [box-shadow:0px_3px_6px_#00000007]">
+      <div className="h-[812px] border  mt-4 bg-[#F7F8F9]">
+        <header className="bg-white [box-shadow:0px_3px_6px_#00000007] h-[68px]">
           <NavigationMenu>
-            <NavigationMenuList className="px-[15px] pt-[27px] pb-[19px]">
+            <NavigationMenuList className="px-[15px] ">
               <NavigationMenuItem>
-                <h1 className="text-base">Account Settings</h1>
+                <h1 className="text-[18px] text-[#1D2226] flex justify-center mt-5 ">Account Settings</h1>
               </NavigationMenuItem>
             </NavigationMenuList>
           </NavigationMenu>
         </header>
 
-        <div>
-          <Card className="bg-[#f7f8f9] shadow-none rounded-none border-0 border-b border-[#d2d2d2] border-dashed p-[20px]">
-            <div className="flex justify-start items-start gap-[20px] mb-[30px]">
+        <div className=" flex-grow ">
+          <Card className="bg-[#f7f8f9] shadow-none rounded-none border-0 border-b border-[#CBCBCB] border-dashed p-[20px]">
+            <div className="flex justify-start items-start gap-[20px] ">
               <div className="relative">
                 <Avatar className="w-[76px] h-[76px]">
                   <AvatarImage
@@ -47,11 +47,8 @@ export default function Settings() {
               </div>
             </div>
 
-            <p className="text-[14px]">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam
-              deleniti quaerat recusandae mollitia optio! Quasi dolore at, ut
-              fugiat temporibus, deleniti dignissimos esse porro voluptas quod
-              nulla non officiis officia.
+            <p className="text-[14px] text-[#1D2226] mt-[10px]">
+            Lorem Ipsum Dolor Sit Amet, Consetetur Sadipscing Elitr, Sed Diam Nonumy Eirmod Tempor Invidunt Ut Labore Et Dolore Magna Aliquyam Erat, Sed Diam
             </p>
           </Card>
         </div>

@@ -1,3 +1,5 @@
+
+import { useState } from "react";
 import {
   NavigationMenu,
   NavigationMenuItem,
@@ -7,22 +9,25 @@ import {
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Button } from "@/components/ui/button";
-import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
+// import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { Link } from "react-router-dom";
 
 export default function Register() {
+  const [value, setValue] = useState('yes')
+
+  const handleToggle = (name: string) => { 
+    setValue(name)
+  }
+
   return (
-    <div className="h-[812px] relative flex flex-col">
+    <div className="h-[812px] relative flex flex-col bg-[#F7F8F9] border mt-4">
       <header>
         <NavigationMenu>
-          <NavigationMenuList className="px-[20px] pt-[40px] pb-[22px]">
+          <NavigationMenuList className="px-[20px] pt-[40px] pb-[17px]">
             <NavigationMenuItem>
-              <div className="flex flex-col">
-                <h1 className="text-[28px] font-semibold leading-none">
-                  Create your
-                </h1>
-                <h1 className="text-[28px] font-semibold leading-none">
-                  PopX account
+              <div className="flex flex-col max-w-[198px]">
+                <h1 className="text-[28px] text-[#1D2226] font-semibold ">
+                  Create your  PopX account
                 </h1>
               </div>
             </NavigationMenuItem>
@@ -30,7 +35,7 @@ export default function Register() {
         </NavigationMenu>
       </header>
 
-      <div className="space-y-6 px-[20px] flex-1">
+      <div className=" px-[20px] flex-1">
         <div className="relative">
           <Label
             htmlFor="fullName"
@@ -41,7 +46,7 @@ export default function Register() {
           <Input
             id="fullName"
             type="text"
-            className="mt-[22px] bg-[#f7f8f9] text-black border border-[#CBCBCB] focus-visible:ring-[#6C25FF] h-[52px] px-3"
+            className="mt-[22px] bg-[#f7f8f9] text-black border border-[#CBCBCB] focus-visible:ring-[#6C25FF] h-[40px] px-3"
             placeholder="Full Name"
           />
         </div>
@@ -56,7 +61,7 @@ export default function Register() {
           <Input
             id="email"
             type="email"
-            className="mt-[22px] bg-[#f7f8f9] text-black border border-[#CBCBCB] focus-visible:ring-[#6C25FF] h-[52px] px-3"
+            className="mt-[22px] bg-[#f7f8f9] text-black border border-[#CBCBCB] focus-visible:ring-[#6C25FF] h-[40px] px-3"
             placeholder="91-XXXXXXXX"
           />
         </div>
@@ -71,7 +76,7 @@ export default function Register() {
           <Input
             id="fullName"
             type="text"
-            className="mt-[22px] bg-[#f7f8f9] text-black border border-[#CBCBCB] focus-visible:ring-[#6C25FF] h-[52px] px-3"
+            className="mt-[22px] bg-[#f7f8f9] text-black border border-[#CBCBCB] focus-visible:ring-[#6C25FF] h-[40px] px-3"
             placeholder="email@example.com"
           />
         </div>
@@ -86,7 +91,7 @@ export default function Register() {
           <Input
             id="email"
             type="email"
-            className="mt-[22px] bg-[#f7f8f9] text-black border border-[#CBCBCB] focus-visible:ring-[#6C25FF] h-[52px] px-3"
+            className="mt-[22px] bg-[#f7f8f9] text-black border border-[#CBCBCB] focus-visible:ring-[#6C25FF] h-[40px] px-3"
             placeholder="********"
           />
         </div>
@@ -101,7 +106,7 @@ export default function Register() {
           <Input
             id="fullName"
             type="text"
-            className="mt-[22px] bg-[#f7f8f9] text-black border border-[#CBCBCB] focus-visible:ring-[#6C25FF] h-[52px] px-3"
+            className="mt-[22px] bg-[#f7f8f9] text-black border border-[#CBCBCB] focus-visible:ring-[#6C25FF] h-[40px] px-3"
             placeholder="Company"
           />
         </div>
@@ -110,25 +115,23 @@ export default function Register() {
           <Label className="text-black font-light flex gap-0 text-[14px]">
             Are you an agency? <span className="text-red-500">*</span>
           </Label>
-          <RadioGroup defaultValue="no" className="flex gap-6 mt-1">
-            {["yes", "no"].map((value) => (
-              <div key={value} className="flex items-center space-x-2 relative">
-                <RadioGroupItem
-                  value={value}
-                  id={`agency-${value}`}
-                  className="peer appearance w-4 h-4 rounded-full border border-[#CBCBCB] transition-all duration-400 linear 
-            data-[state=checked]:border-[#6C25FF] data-[state=checked]:bg-[#6C25FF]"
-                />
-                <span className="pointer-events-none absolute w-2 h-2 left-[2px] top-[2px] rounded-full bg-white scale-0 peer-checked:scale-100 transition-transform duration-200" />
-                <Label
-                  htmlFor={`agency-${value}`}
-                  className="text-black capitalize text-[14px]"
-                >
-                  {value}
-                </Label>
-              </div>
-            ))}
-          </RadioGroup>
+         
+        <div className="flex items-center gap-6"> 
+          <div className="flex items-center gap-2 " onClick={() =>handleToggle('yes')}>
+            <div className={`${value === 'yes'? "border-[#642AF5] ":"border-[#919191]"} h-[22px] w-[22px] border rounded-full flex items-center justify-center `}>
+              {value === 'yes' && <div className="bg-[#6C25FF] h-[12px] w-[12px] rounded-full " /> }  
+            </div>
+            <p className="text-[]">Yes</p>
+          </div>
+
+          <div className="flex items-center gap-2 " onClick={() =>handleToggle('no')}>
+            <div className={`${value === 'no'? "border-[#642AF5] ":"border-[#919191]"} h-[22px] w-[22px] border rounded-full flex items-center justify-center `}>
+              {value === 'no' && <div className="bg-[#6C25FF] h-[12px] w-[12px] rounded-full " /> }  
+            </div>
+            <p className="text-[]">No</p>
+          </div>
+
+          </div>
         </div>
       </div>
 
@@ -136,7 +139,7 @@ export default function Register() {
         <Link to="/settings">
           <Button
             type="submit"
-            className="w-full bg-[#6C25FF] hover:bg-[#5a1fe6] text-white font-semibold text-[16px] h-[46px] mt-0 mb-[30px]"
+            className="w-full bg-[#6C25FF] hover:bg-[#5a1fe6] text-white font-normal text-[16px] h-[46px] mt-0 mb-[30px]"
           >
             Create Account
           </Button>
